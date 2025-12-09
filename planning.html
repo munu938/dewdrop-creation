@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event- Planning </title>
+    <link rel="stylesheet" href="planning.css">
+    <link rel="shortcut icon" href="./android-chrome-192x192.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Planning Dashboard</h1>
+            <p>Your complete wedding planning companion</p>
+        </header>
+
+        <div class="dashboard-grid">
+            <!-- Budget Planning -->
+            <div class="card">
+                <div class="card-header">
+                    <h2>Budget Planner</h2>
+                    <span class="card-icon">💰</span>
+                </div>
+                <div class="budget-item">
+                    <span>Venue</span>
+                    <input type="number" id="venue" value="5000" onchange="updateBudget()">
+                </div>
+                <div class="budget-item">
+                    <span>Catering</span>
+                    <input type="number" id="catering" value="3500" onchange="updateBudget()">
+                </div>
+                <div class="budget-item">
+                    <span>Photography</span>
+                    <input type="number" id="photography" value="2000" onchange="updateBudget()">
+                </div>
+                <div class="budget-item">
+                    <span>Decorations</span>
+                    <input type="number" id="decorations" value="1500" onchange="updateBudget()">
+                </div>
+                <div class="budget-item">
+                    <span>Attire</span>
+                    <input type="number" id="attire" value="2500" onchange="updateBudget()">
+                </div>
+                <div class="budget-item">
+                    <span>Music/DJ</span>
+                    <input type="number" id="music" value="1200" onchange="updateBudget()">
+                </div>
+                <div class="budget-total">
+                    <h3>Total Budget</h3>
+                    <div class="amount" id="totalBudget">rs 15,700</div>
+                </div>
+            </div>
+
+            <!-- To-Do List -->
+            <div class="card">
+                <div class="card-header">
+                    <h2>To-Do List</h2>
+                    <span class="card-icon">✓</span>
+                </div>
+                <div class="todo-input-container">
+                    <input type="text" id="todoInput" placeholder="Add a new task...">
+                    <button onclick="addTodo()">Add</button>
+                </div>
+                <div id="todoList">
+                    <div class="todo-item">
+                        <input type="checkbox" onchange="toggleTodo(this)">
+                        <span>Book wedding venue</span>
+                        <button onclick="deleteTodo(this)">Delete</button>
+                    </div><br>
+                    <div class="todo-item">
+                        <input type="checkbox" onchange="toggleTodo(this)">
+                        <span>Send invitations</span>
+                        <button onclick="deleteTodo(this)">Delete</button>
+                    </div><br>
+                    <div class="todo-item">
+                        <input type="checkbox" onchange="toggleTodo(this)">
+                        <span>Choose wedding cake</span>
+                        <button onclick="deleteTodo(this)">Delete</button>
+                    </div><br>
+                    <div class="todo-item">
+                        <input type="checkbox" onchange="toggleTodo(this)">
+                        <span>Book photographer</span>
+                        <button onclick="deleteTodo(this)">Delete</button>
+                    </div><br>
+                </div>
+            </div>
+
+            <!-- Progress Dashboard -->
+            <div class="card">
+                <div class="card-header">
+                    <h2>Progress Overview</h2>
+                    <span class="card-icon">📊</span>
+                </div>
+                <div class="progress-section">
+                    <h3>Overall Completion</h3>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="overallProgress" style="width: 65%">65%</div>
+                    </div>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="number" id="tasksCompleted">12</div>
+                        <div class="label">Tasks Completed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number" id="tasksRemaining">8</div>
+                        <div class="label">Tasks Remaining</div>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-bar" style="height: 80%">
+                        <div class="chart-bar-label">Venue</div>
+                    </div>
+                    <div class="chart-bar" style="height: 100%">
+                        <div class="chart-bar-label">Catering</div>
+                    </div>
+                    <div class="chart-bar" style="height: 60%">
+                        <div class="chart-bar-label">Decor</div>
+                    </div>
+                    <div class="chart-bar" style="height: 90%">
+                        <div class="chart-bar-label">Attire</div>
+                    </div>
+                    <div class="chart-bar" style="height: 45%">
+                        <div class="chart-bar-label">Music</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline -->
+            <div class="card">
+                <div class="card-header">
+                    <h2>Timeline</h2>
+                    <span class="card-icon">📅</span>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item completed">
+                        <div class="timeline-content">
+                            <div class="timeline-date">12 Months Before</div>
+                            <div>Set budget & guest list</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item completed">
+                        <div class="timeline-content">
+                            <div class="timeline-date">9 Months Before</div>
+                            <div>Book venue & vendors</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">6 Months Before</div>
+                            <div>Order invitations & attire</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">3 Months Before</div>
+                            <div>Final details & rehearsal</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">1 Month Before</div>
+                            <div>Confirm all arrangements</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="planning.js"></script>
+    </body>
+    </html>
+       
