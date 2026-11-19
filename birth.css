@@ -1,0 +1,225 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #d83d5c 0%, #9f0fd8 50%, #ffffff 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+          /* Navigation */
+        .navbar {
+            background: #e5dfdf;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo h1 {
+            color: #ce271b;
+            font-size: 1.5rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: #e93a1f;
+        }
+
+        .btn-primary {
+            background: #ef4646;
+            color: #fff !important;
+            padding: 0.5rem 1.5rem;
+            border-radius: 5px;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            transition: 0.3s;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(255, 23, 68, 0.3);
+        }
+
+        h1 {
+            color: #d50000;
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.4em;
+            font-weight: 300;
+        }
+
+        .age-ranges {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .age-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(255, 23, 68, 0.2);
+            transition: all 0.3s ease;
+            border-top: 5px solid #ff1744;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .age-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #e8637e, #9e35ce, #ff1744);
+        }
+
+        .age-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(255, 23, 68, 0.4);
+        }
+
+        .age-title {
+            font-size: 2.5em;
+            color: #d50000;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .age-range {
+            background: linear-gradient(45deg, #3d1d79, #ff5722);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(255, 23, 68, 0.4);
+        }
+
+        .features {
+            list-style: none;
+            margin: 25px 0;
+        }
+
+        .features li {
+            padding: 12px 0;
+            font-size: 1.1em;
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .features li::before {
+            content: '🎉';
+            position: absolute;
+            left: 0;
+            font-size: 1.5em;
+        }
+
+        .price {
+            font-size: 2em;
+            color: #d50000;
+            font-weight: bold;
+            margin: 20px 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #ff1744, #ff5722);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 8px 25px rgba(255, 23, 68, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 23, 68, 0.6);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2em;
+            }
+            
+            .age-title {
+                font-size: 2em;
+            }
+            
+            .age-ranges {
+                grid-template-columns: 1fr;
+            }
+        }
+    
